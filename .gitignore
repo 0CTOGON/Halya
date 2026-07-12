@@ -1,0 +1,14 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Debug files
+*.pdb
+
+# WebView2 junk
+**/EBWebView/
