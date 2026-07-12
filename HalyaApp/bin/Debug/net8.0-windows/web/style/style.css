@@ -1,0 +1,491 @@
+@font-face {
+    font-family: "Satoshi";
+    src: url("../Satoshi.ttf") format("truetype");
+}
+
+
+:root {
+    --bg: #0F1115;
+    --surface: #171A21;
+    --surface-hover: #202530;
+    --text: #F5F7FA;
+    --text-secondary: #A5AFBF;
+    --accent: #6CA8FF;
+    --radius: 16px;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Satoshi", sans-serif;
+}
+
+
+
+/* TITLE BAR */
+
+#halyaBar {
+
+    height: 42px;
+    flex-shrink: 0;
+
+    background: var(--surface);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    user-select: none;
+
+}
+
+
+.brand {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.brand img {
+
+    width: 24px;
+    height: 24px;
+
+}
+
+
+.window-buttons {
+
+    display: flex;
+    gap: 8px;
+
+}
+
+
+.window-buttons button {
+
+    width: 36px;
+    height: 28px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--surface-hover);
+
+    color: var(--text);
+
+}
+
+
+.window-buttons button:hover {
+
+    background: #303746;
+
+}
+
+
+#close:hover {
+
+    background: #c42b2b;
+
+}
+
+
+
+/* APP */
+
+#app {
+
+    height: calc(100vh - 42px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+}
+
+
+
+/* HEADER */
+
+header {
+
+    padding: 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+}
+
+
+header h1 {
+
+    font-size: 2.4rem;
+
+    font-weight: 700;
+
+}
+
+
+.logo {
+
+    width: 72px;
+
+}
+
+
+
+/* MAIN */
+
+main {
+
+    flex: 1;
+
+    min-height: 0;
+
+    display: flex;
+
+    gap: 16px;
+
+    padding: 0 24px 24px;
+
+    overflow: hidden;
+
+}
+
+
+
+/* PANELS */
+
+#sidebar,
+#reader {
+
+    background: var(--surface);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+}
+
+
+#sidebar {
+
+    width: 280px;
+
+    flex-shrink: 0;
+
+}
+
+
+#reader {
+
+    width: 40%;
+
+    flex-shrink: 0;
+
+}
+
+
+
+/* FEED */
+
+#feed {
+
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 4px;
+
+}
+
+
+
+.article {
+
+    background: var(--surface);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+}
+
+
+
+.article:hover {
+
+    background: var(--surface-hover);
+
+}
+
+
+.article h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.article small {
+
+    color: var(--text-secondary);
+
+}
+
+
+
+/* INPUT */
+
+#feedURL {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: var(--surface-hover);
+
+    color: var(--text);
+
+}
+
+
+
+#feedURL:focus {
+
+    outline: 2px solid var(--accent);
+
+}
+
+
+
+/* BUTTONS */
+
+button {
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 14px 18px;
+
+    background: var(--surface-hover);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+    background: #262d39;
+
+}
+
+
+#addFeed {
+
+    width: 100%;
+
+    background: var(--accent);
+
+}
+
+
+
+/* FEED LIST */
+
+#sidebar input,
+#sidebar button {
+
+    margin-bottom: 12px;
+
+}
+
+
+#allFeed {
+
+    width: 100%;
+
+}
+
+
+#feedList {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.feed-item {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.feed-item button:first-child {
+
+    flex: 1;
+
+}
+
+
+.delete-feed {
+
+    width: 40px;
+
+}
+
+
+
+/* BADGE */
+
+.unread-count {
+
+    background: var(--accent);
+
+    color: white;
+
+    border-radius: 999px;
+
+    min-width: 24px;
+
+    height: 24px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--surface-hover);
+
+    border-radius: 999px;
+
+}
+
+#halyaBar {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    background: var(--surface);
+
+    user-select: none;
+}
+
+
+#dragArea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex: 1;
+
+    cursor: grab;
+}
+
+
+#dragArea:active {
+    cursor: grabbing;
+}
+
+
+#halyaBar img {
+    width: 28px;
+    height: 28px;
+}
+
+
+.window-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+
+.window-buttons button {
+    width: 36px;
+    height: 32px;
+
+    padding: 0;
+
+    border-radius: 10px;
+}

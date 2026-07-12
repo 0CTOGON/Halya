@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>halya.</title>
+
+    <meta
+        name="description"
+        content="Halya RSS reader."
+    >
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style/style.css"
+    >
+
+</head>
+
+
+
+<body>
+
+
+<div id="halyaBar">
+
+    <div class="brand" id="dragArea">
+        <img src="halya.png" alt="Halya">
+        <span>halya.</span>
+    </div>
+
+
+    <div class="window-buttons">
+
+        <button id="minimize">
+            —
+        </button>
+
+        <button id="close">
+            ✕
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+
+<div id="app">
+
+
+<header>
+
+    <div>
+
+        <h1>
+            Stay informed. Stay calm.
+        </h1>
+
+    </div>
+
+
+    <img
+        src="icons/appIcon.ico"
+        class="logo"
+        alt="Halya logo"
+    >
+
+</header>
+
+
+
+
+
+<main>
+
+
+<aside id="sidebar">
+
+    <h2>
+        Feeds
+    </h2>
+
+
+    <input
+        id="feedURL"
+        placeholder="RSS feed URL"
+    >
+
+
+    <button id="addFeed">
+        Add Feed
+    </button>
+
+
+    <button id="allFeed">
+        All
+    </button>
+
+
+    <div id="feedList"></div>
+
+
+</aside>
+
+
+
+
+
+<section id="feed"></section>
+
+
+
+
+
+<article id="reader">
+
+    <h2>
+        Welcome to Halya
+    </h2>
+
+
+    <p>
+        Select an article to begin reading.
+    </p>
+
+</article>
+
+
+
+</main>
+
+
+<div id="toast"></div>
+
+
+</div>
+
+
+
+<script type="module" src="js/window.js"></script>
+
+<script type="module" src="js/script.js"></script>
+
+
+</body>
+
+</html>

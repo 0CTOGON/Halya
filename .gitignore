@@ -4,7 +4,6 @@
 *.suo
 
 # Build output
-bin/
 obj/
 
 # Debug files
