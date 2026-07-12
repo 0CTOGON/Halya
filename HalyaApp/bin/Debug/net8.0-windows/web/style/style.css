@@ -1,0 +1,605 @@
+@font-face {
+    font-family: "Satoshi";
+    src: url("../Satoshi.ttf") format("truetype");
+}
+
+
+:root {
+
+    --bg: #0F1115;
+
+    --surface: #171A21;
+    --surface-hover: #202530;
+
+    --text: #F5F7FA;
+    --text-secondary: #A5AFBF;
+
+    --accent: #6CA8FF;
+
+    --radius: 16px;
+
+}
+
+
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font: inherit;
+
+}
+
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+
+body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: "Satoshi", sans-serif;
+
+}
+
+
+
+/* --------------------
+   Halya Window Bar
+-------------------- */
+
+
+#halyaBar {
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    background: var(--surface);
+
+    user-select: none;
+
+}
+
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+}
+
+
+
+.brand img {
+
+    width: 28px;
+    height: 28px;
+
+}
+
+
+
+.window-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+
+.window-buttons button {
+
+    width: 36px;
+    height: 32px;
+
+    padding: 0;
+
+}
+
+
+
+/* --------------------
+   Main App
+-------------------- */
+
+
+#app {
+
+    height: calc(100vh - 52px);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+/* --------------------
+   Header
+-------------------- */
+
+
+header {
+
+    padding: 22px 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+}
+
+
+
+header h1 {
+
+    font-size: 2.2rem;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+
+.logo {
+
+    width: 72px;
+
+    user-select: none;
+
+}
+
+
+
+/* --------------------
+   Main Layout
+-------------------- */
+
+
+main {
+
+    flex: 1;
+
+    min-height: 0;
+
+    display: flex;
+
+    gap: 16px;
+
+    padding: 0 24px 24px;
+
+    overflow: hidden;
+
+}
+
+
+
+/* --------------------
+   Panels
+-------------------- */
+
+
+#sidebar,
+#reader {
+
+    background: var(--surface);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+}
+
+
+
+#sidebar {
+
+    width: 280px;
+
+    flex-shrink: 0;
+
+    overflow-y: auto;
+
+}
+
+
+
+#reader {
+
+    width: 38%;
+
+    flex-shrink: 0;
+
+    overflow-y: auto;
+
+}
+
+
+
+#feed {
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow-y: auto;
+
+    padding: 4px;
+
+}
+
+
+
+/* --------------------
+   Reader
+-------------------- */
+
+
+#reader h2 {
+
+    margin-bottom: 14px;
+
+}
+
+
+
+#reader p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+/* --------------------
+   Articles
+-------------------- */
+
+
+.article {
+
+    background: var(--surface);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background .15s,
+        transform .15s;
+
+}
+
+
+
+.article:hover {
+
+    background: var(--surface-hover);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+.article h3 {
+
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.article small {
+
+    color: var(--text-secondary);
+
+}
+
+
+
+.article.unread h3 {
+
+    font-weight: 800;
+
+}
+
+
+
+/* --------------------
+   Inputs
+-------------------- */
+
+
+input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    border: none;
+
+    outline: none;
+
+    background: var(--surface-hover);
+
+    color: var(--text);
+
+}
+
+
+
+input:focus {
+
+    outline: 2px solid var(--accent);
+
+}
+
+
+
+/* --------------------
+   Buttons
+-------------------- */
+
+
+button {
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 16px;
+
+    background: var(--surface-hover);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition: .15s;
+
+}
+
+
+
+button:hover {
+
+    background: #293140;
+
+    transform: translateY(-1px);
+
+}
+
+
+
+button:active {
+
+    transform: translateY(0);
+
+}
+
+
+
+#sidebar input,
+#sidebar button {
+
+    margin-bottom: 12px;
+
+}
+
+
+
+#addFeed {
+
+    width: 100%;
+
+    background: var(--accent);
+
+    color: white;
+
+    font-weight: 700;
+
+}
+
+
+
+#allFeed {
+
+    width: 100%;
+
+}
+
+
+
+/* --------------------
+   Feed List
+-------------------- */
+
+
+#feedList {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+
+.feed-item {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+
+.feed-item button:first-child {
+
+    flex: 1;
+
+    text-align: left;
+
+}
+
+
+
+.delete-feed {
+
+    width: 40px;
+
+    color: var(--text-secondary);
+
+}
+
+
+
+/* --------------------
+   Badge
+-------------------- */
+
+
+.unread-count {
+
+    background: var(--accent);
+
+    color: white;
+
+    border-radius: 999px;
+
+    min-width: 24px;
+
+    height: 24px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: .8rem;
+
+    font-weight: 700;
+
+}
+
+
+
+/* --------------------
+   Toast
+-------------------- */
+
+
+#toast {
+
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    padding: 16px 22px;
+
+    background: var(--surface);
+
+    border-radius: 14px;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition: .2s;
+
+}
+
+
+
+#toast.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+
+/* --------------------
+   Scrollbars
+-------------------- */
+
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--surface-hover);
+
+    border-radius: 999px;
+
+}
