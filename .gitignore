@@ -3,11 +3,19 @@
 *.user
 *.suo
 
-# Build output
+# .NET build output
+bin/
 obj/
 
-# Debug files
+# Debug symbols
 *.pdb
 
-# WebView2 junk
+# Logs
+*.log
+
+# WebView2 temporary data
 **/EBWebView/
+
+# OS junk
+Thumbs.db
+.DS_Store

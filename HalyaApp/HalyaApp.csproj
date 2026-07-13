@@ -9,23 +9,31 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
+    <!-- App identity -->
+    <AssemblyName>Halya</AssemblyName>
+    <RootNamespace>HalyaApp</RootNamespace>
+
+    <!-- App icon -->
     <ApplicationIcon>web\icons\appIcon.ico</ApplicationIcon>
+
+    <!-- Better publishing -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
   </PropertyGroup>
 
 
   <ItemGroup>
-
+    <!-- WebView2 -->
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4078.44" />
-
   </ItemGroup>
 
 
+  <!-- Copy frontend files beside the executable -->
   <ItemGroup>
-
     <Content Include="web\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-
   </ItemGroup>
 
 
