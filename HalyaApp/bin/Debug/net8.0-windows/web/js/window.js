@@ -1,6 +1,9 @@
 const minimize =
     document.getElementById("minimize");
 
+const maximize =
+    document.getElementById("maximize");
+
 const close =
     document.getElementById("close");
 
@@ -8,23 +11,18 @@ const bar =
     document.getElementById("halyaBar");
 
 
-
 minimize.onclick = () => {
-
-    window.chrome.webview.postMessage(
-        "minimize"
-    );
-
+    window.chrome.webview.postMessage("minimize");
 };
 
 
+maximize.onclick = () => {
+    window.chrome.webview.postMessage("maximize");
+};
+
 
 close.onclick = () => {
-
-    window.chrome.webview.postMessage(
-        "close"
-    );
-
+    window.chrome.webview.postMessage("close");
 };
 
 

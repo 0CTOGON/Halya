@@ -227,30 +227,37 @@ addButton.onclick = async () => {
 };
 
 document
-    .getElementById("dragArea")
-    .addEventListener(
-        "mousedown",
-        () => {
-            window.chrome.webview.postMessage("drag");
-        }
+.getElementById("close")
+.onclick = () => {
+
+    window.chrome.webview.postMessage(
+        "close"
     );
 
+};
 
-document
-    .getElementById("close")
-    .onclick = () => {
-
-        window.chrome.webview.postMessage("close");
-
-    };
 
 
 document
-    .getElementById("minimize")
-    .onclick = () => {
+.getElementById("minimize")
+.onclick = () => {
 
-        window.chrome.webview.postMessage("minimize");
+    window.chrome.webview.postMessage(
+        "minimize"
+    );
 
-    };
+};
+
+
+
+document
+.getElementById("dragArea")
+.onmousedown = () => {
+
+    window.chrome.webview.postMessage(
+        "drag"
+    );
+
+};
 
 renderFeeds();
