@@ -19,3 +19,7 @@ obj/
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Installer
+/installer
+Halya.iss
